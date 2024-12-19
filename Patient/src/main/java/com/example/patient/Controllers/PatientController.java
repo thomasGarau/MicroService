@@ -1,6 +1,9 @@
 package com.example.patient.Controllers;
 
+import com.example.patient.Models.DossierMedical;
 import com.example.patient.Request.PatientRequest;
+import com.example.patient.Services.PatientService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import com.example.patient.Models.Patient;
 
@@ -13,6 +16,12 @@ import java.util.List;
 public class PatientController {
 
     private static List<Patient> listPatient = new ArrayList<>();
+    private final PatientService patientService;
+
+    @Autowired
+    public PatientController(PatientService patientService) {
+        this.patientService = patientService;
+    }
 
     @GetMapping("/getPatient")
     public Patient getPatient(@RequestParam int id) {
@@ -71,5 +80,11 @@ public class PatientController {
             }
         }
     }
+
+    @GetMapping("/getDossierMedical")
+    public DossierMedical getDossierMedical(@RequestParam int patientId) {
+        return patientService.getDossierMedicalForPatient(patientId);
+    }
+
 }
 

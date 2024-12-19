@@ -2,7 +2,10 @@ package com.example.practicien.Controllers;
 
 import com.example.practicien.Models.Practicien;
 import com.example.practicien.Models.Specialite;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import com.example.practicien.Models.DossierMedical;
+import com.example.practicien.Services.PracticienService;
 
 import java.lang.reflect.Field;
 import java.util.ArrayList;
@@ -15,6 +18,8 @@ import static java.util.Arrays.asList;
 @RequestMapping("/practicien")
 public class PracticienController {
 
+    private final PracticienService practicienService;
+
     private List<Specialite> specialites = new ArrayList<>(asList(
             new Specialite("Dentiste"),
             new Specialite("Ophtalmologue"),
@@ -26,7 +31,10 @@ public class PracticienController {
     ));
     private List<Practicien> practiciens = new ArrayList<Practicien>();
 
-    public PracticienController(){}
+    @Autowired
+    public PracticienController(PracticienService practicienService) {
+        this.practicienService = practicienService;
+    }
 
     @GetMapping("/getPracticien")
     public Practicien getPatient(@RequestParam int id) {
@@ -128,7 +136,26 @@ public class PracticienController {
         }
     }
 
+    // Routes pour interagir avec Dossier Medical
 
+    @GetMapping("/getDossierMedical")
+    public DossierMedical getDossierMedical(@RequestParam int patientId) {
+        return practicienService.getDossierMedicalForPatient(patientId);
+    }
 
+    @PostMapping("/addDossierMedical")
+    public DossierMedical addDossierMedical(@RequestBody DossierMedical dossierMedical) {
+        return practicienService.addDossierMedical(dossierMedical);
+    }
+
+    @PutMapping("/updateDossierMedical")
+    public DossierMedical updateDossierMedical(@RequestParam int id, @RequestBody DossierMedical dossierMedical) {
+        return practicienService.updateDossierMedical(id, dossierMedical);
+    }
+
+    @DeleteMapping("/deleteDossierMedical")
+    public void deleteDossierMedical(@RequestParam int id) {
+        practicienService.deleteDossierMedical(id);
+    }
 
 }
