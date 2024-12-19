@@ -19,8 +19,8 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="DossierMedical" options="-parameters" />
       <module name="Patient" options="" />
-      <module name="Practicien" options="-parameters" />
-      <module name="RDV" options="-parameters" />
+      <module name="Practicien" options="" />
+      <module name="RDV" options="" />
       <module name="eureka" options="" />
       <module name="gateway" options="-parameters" />
     </option>

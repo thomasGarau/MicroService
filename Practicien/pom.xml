@@ -8,8 +8,8 @@
     <version>0.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
 
-    <name>Employee-Service</name>
-    <description>Employee-Service</description>
+    <name>Practicien-Service</name>
+    <description>Practicien-Service</description>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
