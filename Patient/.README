@@ -1,0 +1,32 @@
+# Patient Service
+
+## Description
+
+**Patient Service** est un microservice développé en Java avec Spring Boot. Il gère les informations des patients et expose une API REST permettant des opérations CRUD. Ce service intègre également une route pour interagir avec le service de gestion des dossiers médicaux. Il est enregistré sur Eureka pour la découverte des services dans une architecture de microservices.
+
+## Prérequis
+
+- **Java 17**
+- **Maven** installé et configuré
+- **Docker** pour la containerisation (optionnel)
+- **Eureka Server** opérationnel pour la découverte des services
+- **Dossier Medical Service** opérationnel pour les interactions avec les dossiers médicaux
+
+## Déploiement
+
+### Construire le projet
+
+```bash
+- ```mvn clean install```
+
+### Lancer le service
+- ```mvn spring-boot:run```
+
+### Docker
+- générer l'image : ```docker build -t patient-service .```
+- lancer le conteneur : ```docker run -p 8011:8011 patient-service```
+
+### Configuration
+-nom de l'application : ```patient-service```
+-port : ```8011```
+-endpoint : ```/patient```

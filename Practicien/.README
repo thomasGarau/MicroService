@@ -1,0 +1,32 @@
+# Practicien Service
+
+## Description
+
+**Practicien Service** est un microservice développé en Java avec Spring Boot. Il gère les informations des praticiens et leurs spécialités, tout en permettant des interactions avec le service de gestion des dossiers médicaux. Il expose des endpoints REST pour les opérations CRUD. Ce service est enregistré sur Eureka pour une intégration fluide dans une architecture de microservices.
+
+## Prérequis
+
+- **Java 17**
+- **Maven** installé et configuré
+- **Docker** pour la containerisation (optionnel)
+- **Eureka Server** opérationnel pour la découverte des services
+- **Dossier Medical Service** opérationnel pour les interactions avec les dossiers médicaux
+
+## Déploiement
+
+### Construire le projet
+
+```bash
+- ```mvn clean install```
+
+### Lancer le service
+- ```mvn spring-boot:run```
+
+### Docker
+- générer l'image : ```docker build -t practicien-service .```
+- lancer le conteneur : ```docker run -p 8012:8012 practicien-service```
+
+### Configuration
+-nom de l'application : ```practicien-service```
+-port : ```8012```
+-endpoint : ```/practicien```

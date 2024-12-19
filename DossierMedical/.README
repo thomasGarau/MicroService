@@ -1,0 +1,31 @@
+# Dossier Medical Service
+
+## Description
+
+**Dossier Medical Service** est un microservice développé en Java avec Spring Boot. Il gère les dossiers médicaux des patients et expose une API REST permettant des opérations CRUD. Intégré avec Eureka, il participe à une architecture de microservices pour la découverte et l'orchestration des services.
+
+## Prérequis
+
+- **Java 17**
+- **Maven** installé et configuré
+- **Docker** pour la containerisation (optionnel)
+- **Eureka Server** opérationnel pour la découverte des services
+
+## Déploiement
+
+### Construire le projet
+
+```bash
+- ```mvn clean install```
+
+### Lancer le service
+- ```mvn spring-boot:run```
+
+### Docker
+- générer l'image : ```docker build -t dossier-medical-service .```
+- lancer le conteneur : ```docker run -p 8080:8080 dossier-medical-service```
+
+### Configuration
+-nom de l'application : ```dossier-medical-service```
+-port : ```8014```
+-endpoint : ```/dossier-medical```

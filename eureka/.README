@@ -1,0 +1,29 @@
+# Eureka Server
+
+## Description
+
+**Eureka Server** est un service de découverte développé en Java avec Spring Boot et Spring Cloud Netflix Eureka. Il permet aux microservices de s'enregistrer et de découvrir les autres services disponibles dans une architecture de microservices. Cela facilite la communication entre les services et améliore la scalabilité et la résilience du système.
+
+## Prérequis
+
+- **Java 17**
+- **Maven** installé et configuré
+- **Docker** pour la containerisation (optionnel)
+
+## Déploiement
+
+### Construire le projet
+
+```bash
+mvn clean install
+
+### Lancer le service
+- ```mvn spring-boot:run```
+
+### Docker
+- générer l'image : ```docker build -t eureka-server .```
+- lancer le conteneur : ```docker run -p 8761:8761 eureka-server```
+
+### Configuration
+-nom de l'application : ```eureka-server```
+-port : ```8761```

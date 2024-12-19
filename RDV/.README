@@ -1,0 +1,32 @@
+# RDV Service
+
+## Description
+
+**RDV Service** est un microservice développé en Java avec Spring Boot. Il gère les rendez-vous entre les patients et les praticiens. Ce service permet de réaliser des opérations CRUD sur les rendez-vous et d'obtenir les informations relatives aux rendez-vous d'un patient ou d'un praticien. Intégré avec Eureka, il fonctionne dans une architecture de microservices pour une découverte et une interaction simplifiée.
+
+## Prérequis
+
+- **Java 17**
+- **Maven** installé et configuré
+- **Docker** pour la containerisation (optionnel)
+- **Eureka Server** opérationnel pour la découverte des services
+- **Patient Service** et **Practicien Service** opérationnels pour récupérer les données des patients et des praticiens
+
+## Déploiement
+
+### Construire le projet
+
+```bash
+mvn clean install
+
+### Lancer le service
+- ```mvn spring-boot:run```
+
+### Docker
+- générer l'image : ```docker build -t rdv-service .```
+- lancer le conteneur : ```docker run -p 8013:8013 rdv-service```
+
+### Configuration
+-nom de l'application : ```rdv-service```
+-port : ```8013```
+-endpoint : ```/rdv```
